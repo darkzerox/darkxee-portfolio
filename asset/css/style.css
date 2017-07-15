@@ -1,8 +1,11 @@
 .logo {
     display: block;
-    width: 100%;
+    width: 100%;    
+    text-align: center;    
+}
+.logo img{
     max-width: 150px;
-    text-align: center; 
+    width: 100%;
 }
 .contener{
     max-width: 1200px;
