@@ -1,0 +1,10 @@
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    text-align: center; 
+}
+.contener{
+    max-width: 1200px;
+    margin: auto;
+}
