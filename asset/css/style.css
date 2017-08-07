@@ -1,0 +1,22 @@
+.logo {
+    display: block;
+    width: 100%;    
+    text-align: center;    
+}
+.logo img{
+    max-width: 150px;
+    width: 100%;
+}
+.contener{
+    max-width: 1200px;
+    margin: auto;
+}
+h1 {
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;    
+}
+.center{
+    text-align: center;
+}

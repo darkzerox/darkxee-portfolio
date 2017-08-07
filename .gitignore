@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 node_modules
+=======
+_config.yml
+.vscode
+>>>>>>> origin/master
