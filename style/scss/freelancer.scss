@@ -1,5 +1,6 @@
-@import "variables.less";
-@import "mixins.less";
+@import "variables";
+@import "mixins";
+@import "dzx";
 
 body {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -19,7 +20,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-	color: @theme-success;
+	color: $theme-success;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,17 +55,17 @@ hr.star-light {
 }
 
 hr.star-light:after {
-    background-color: @theme-success;
+    background-color: $theme-success;
     color: white;
 }
 
 hr.star-primary {
-    border-color: @theme-primary;
+    border-color: $theme-primary;
 }
 
 hr.star-primary:after {
     background-color: white;
-    color: @theme-primary;
+    color: $theme-primary;
 }
 
 .img-centered {
@@ -73,7 +74,7 @@ hr.star-primary:after {
 
 header {
 	text-align: center;
-	background: @theme-success;
+	background: $theme-success;
 	color: white;
 	.container {
 		padding-top: 100px;
@@ -116,7 +117,7 @@ header {
 }
 
 .navbar-custom {
-	background: @theme-primary;
+	background: $theme-primary;
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -136,7 +137,7 @@ header {
 			a {
 				color: white;
 				&:hover {
-					color: @theme-success;
+					color: $theme-success;
 				}
 				&:focus,
 				&:active {
@@ -146,12 +147,12 @@ header {
 			&.active {
 				a {
 					color: white;
-					background: @theme-success;
+					background: $theme-success;
 					&:hover,
 					&:focus,
 					&:active {
 						color: white;
-						background: @theme-success;
+						background: $theme-success;
 					}
 				}
 			}
@@ -164,9 +165,9 @@ header {
 		border-color: white;
 		&:hover,
 		&:focus {
-			background-color: @theme-success;
+			background-color: $theme-success;
 			color: white;
-			border-color: @theme-success;
+			border-color: $theme-success;
 		}
 	}
 }
@@ -201,7 +202,7 @@ section {
 }
 
 section.success {
-	background: @theme-success;
+	background: $theme-success;
 	color: white;
 }
 
@@ -224,7 +225,7 @@ section.success {
             max-width: 400px;
             margin: 0 auto;
             .caption {
-                background: fade(@theme-success, 90%);
+                background: fade-in($theme-success, 0.5);
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -272,7 +273,7 @@ section.success {
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid @gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
     input,
     textarea {
 	    z-index: 1;
@@ -304,7 +305,7 @@ section.success {
     }
     &:not(:first-child) {
 	    padding-left: 14px;
-	    border-left: 1px solid @gray-lighter;
+	    border-left: 1px solid $gray-lighter;
     }
 }
 
@@ -317,12 +318,12 @@ section.success {
 
 .floating-label-form-group-with-focus {
 	label {
-	    color: @theme-success;
+	    color: $theme-success;
 	}
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid @gray-lighter;
+    border-top: 1px solid $gray-lighter;
 }
 
 footer {
@@ -332,14 +333,14 @@ footer {
 	}
 	.footer-above {
 		padding-top: 50px;
-		background-color: @theme-primary;
+		background-color: $theme-primary;
 	}
 	.footer-col {
 		margin-bottom: 50px;
 	}
 	.footer-below {
 		padding: 25px 0;
-		background-color: darken(@theme-primary, 5%);
+		background-color: darken($theme-primary, 5%);
 	}
 }
 
@@ -356,19 +357,19 @@ footer {
 	&:focus,
 	&:active,
 	&.active {
-		color: @theme-success;
+		color: $theme-success;
 		background: white;
 		border: solid 2px white;
 	}
 }
 
 .btn-primary {
-	.button-variant(white; @theme-primary; @theme-primary);
+	@include button-variant(white, $theme-primary, $theme-primary);
 	font-weight: 700;
 }
 
 .btn-success {
-	.button-variant(white; @theme-success; @theme-success);
+	@include button-variant(white, $theme-success, $theme-success);
 	font-weight: 700;
 }
 
@@ -435,7 +436,7 @@ footer {
             height:75px;
             width:1px;
             margin-left:35px;
-            background-color:@theme-primary;
+            background-color:$theme-primary;
             transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             /* IE 9 */
@@ -445,7 +446,7 @@ footer {
             .rl {
                 height:75px;
                 width:1px;
-                background-color:@theme-primary;
+                background-color:$theme-primary;
                 transform: rotate(90deg);
                 -ms-transform: rotate(90deg);
                 /* IE 9 */
@@ -477,7 +478,7 @@ footer {
 		position: absolute;
 		left: 0px;
 		top: 0px;
-		background: @theme-success;
+		background: $theme-success;
 		outline: 0;
 		transition: top .1s ease-in, background .5s linear;
 	}
