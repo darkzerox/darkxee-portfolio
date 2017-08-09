@@ -5,14 +5,14 @@ Error: Undefined variable: "$theme-primary".
 3: }
 4: 
 5: .logo {
-6:   max-width: 250px;
-7:   margin: auto;
-8:   background: $theme-primary;
-9:   border-radius: 50%;
-10:   padding: 25px;
+6: 	max-width: 250px;
+7: 	margin: auto;
+8: 	background: $theme-primary;
+9: 	border-radius: 50%;
+10: 	padding: 25px;
 11: 
-12:   img {
-13:     margin: 0;
+12: 	img {
+13: 		margin: 0;
 
 Backtrace:
 D:/Git/darkzerox.github.io/style/scss/dzx.scss:8
@@ -67,4 +67,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.4.25/vendor/listen/lib/listen/adap
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$theme-primary\".\A         on line 8 of D:/Git/darkzerox.github.io/style/scss/dzx.scss\A \A 3: }\A 4: \A 5: .logo {\A 6:   max-width: 250px;\A 7:   margin: auto;\A 8:   background: $theme-primary;\A 9:   border-radius: 50%;\A 10:   padding: 25px;\A 11: \A 12:   img {\A 13:     margin: 0;"; }
+  content: "Error: Undefined variable: \"$theme-primary\".\A         on line 8 of D:/Git/darkzerox.github.io/style/scss/dzx.scss\A \A 3: }\A 4: \A 5: .logo {\A 6: 	max-width: 250px;\A 7: 	margin: auto;\A 8: 	background: $theme-primary;\A 9: 	border-radius: 50%;\A 10: 	padding: 25px;\A 11: \A 12: 	img {\A 13: 		margin: 0;"; }

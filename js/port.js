@@ -1,14 +1,38 @@
+$(window).load(function() {
+
+	$('.box').each(function() {
+    var p_bar = $(this).find('.progress-bar');
+		$(this).hover(
+			function() {
+				p_bar.addClass('active');
+			},
+			function() {
+				p_bar.removeClass('active');
+			}
+		);
+	});
+  $('.progress-bar').each(function() {
+    $(this).animate({
+      width: $(this).attr('aria-valuenow')+'%',
+    }, 3000, 'linear');
+  });
+
+
+
+});
+
+
 /**
- * getJSON portfolio
+ * portfolio data from json
  * @method
- * @param  {json file} get data from json file
- * @return {callback}
+ * @param  {string} data get url path
+ * @return {string}  return and appendTo div
  */
-$.getJSON("/portfolio.json", function(data) {
-  var port_data = [];
-  var port_pop = [];
-  $.each(data, function(key, field) {
-    port_data.push(`
+$.getJSON("/database/portfolio.json", function(data) {
+	var port_data = [];
+	var port_pop = [];
+	$.each(data, function(key, field) {
+		port_data.push(`
       <div class="col-sm-4 portfolio-item group-${field.cateogry}">
         <a href="#${field.name}" class="portfolio-link" data-toggle="modal" rel="noindex nofollow">
           <div class="caption">
@@ -22,7 +46,7 @@ $.getJSON("/portfolio.json", function(data) {
       </div>
     `);
 
-    port_pop.push(`
+		port_pop.push(`
       <div class="portfolio-modal modal fade" id="${field.name}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -60,15 +84,80 @@ $.getJSON("/portfolio.json", function(data) {
       </div>
 
       `);
-  });
+	});
 
-  $(port_data.join("")).appendTo(".portfolio-list");
-  $(port_pop.join("")).appendTo(".portfolio-pop");
+	$(port_data.join("")).appendTo(".portfolio-list");
+	$(port_pop.join("")).appendTo(".portfolio-pop");
 });
 
 
+/**
+ * getSkill data from json
+ * @method
+ * @param  {string} data get url path
+ * @return {string} return and appendTo div
+ */
+$.getJSON("/database/skill.json", function(data) {
+	var s_fontN = [];
+	var s_backN = [];
+	var s_design = [];
+	var s_server = [];
+	$.each(data, function(key, field) {
+
+		if (field.cate === "frontend") {
+			s_fontN.push(skillbar(field.name, field.power,key));
+		}
+		if (field.cate === "backend") {
+			s_backN.push(skillbar(field.name, field.power,key));
+		}
+		if (field.cate === "design") {
+			s_design.push(skillbar(field.name, field.power,key));
+		}
+		if (field.cate === "server") {
+			s_server.push(skillbar(field.name, field.power,key));
+		}
+	});
+
+	$(s_fontN.join("")).insertAfter(".skill-frontend");
+	$(s_backN.join("")).insertAfter(".skill-backend");
+	$(s_design.join("")).insertAfter(".skill-design");
+	$(s_server.join("")).insertAfter(".skill-server");
+
+});
 
 
+/**
+ * skillbar return skillhtml
+ * @method skillbar
+ * @param  {string} name  get skill name
+ * @param  {number} power get percent
+ * @return {string} html data
+ */
+function skillbar(name, power,key) {
+  var is_color = ""
+  if (key % 1 === 0){
+    is_color = "#7d3939";
+  }
+  if (key % 2 === 0){
+    is_color = "#088";
+  }
+  if (key % 3 === 0){
+    is_color = "#0d543b";
+  }
+  if (key % 4 === 0){
+    is_color = "#5d1a60";
+  }
+
+	return `<div class="skill-g">
+            <div class="col-md-3 "><p class="text-center">${name}</p></div>
+            <div class="col-md-9">
+              <div class="progress">
+                <div class="progress-bar  progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="${power}" aria-valuemin="0" aria-valuemax="100" style="width:0; background-color:${is_color}">
+                </div>
+              </div>
+            </div>
+          </div>`;
+}
 
 var map;
 /**
@@ -77,123 +166,111 @@ var map;
  * @return {[type]} [description]
  */
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {
-      lat: 13.7364836,
-      lng: 100.5235114
-    },
-    zoom: 8,
-    /**
-     * [styles set map style]
-     * @type {Array}
-     */
-    styles: [{
-        "elementType": "geometry",
-        "stylers": [{
-          "color": "#315274"
-        }]
-      },
-      {
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      },
-      {
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-          "color": "#1a3646"
-        }]
-      },
-      {
-        "featureType": "administrative.country",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#315274"
-        }]
-      },
-      {
-        "featureType": "administrative.province",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#315274"
-        }]
-      },
-      {
-        "featureType": "landscape.natural",
-        "elementType": "geometry",
-        "stylers": [{
-          "color": "#315274"
-        }]
-      },
-      {
-        "featureType": "poi",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      },
-      {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#315274"
-        }]
-      },
-      {
-        "featureType": "poi.park",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      },
-      {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [{
-          "color": "#0f1923"
-        }]
-      },
-      {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      },
-      {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#0f1924"
-        }]
-      },
-      {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [{
-          "color": "#0f1924"
-        }]
-      },
-      {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      }
-    ]
-  });
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: {
+			lat: 13.7364836,
+			lng: 100.5235114
+		},
+		zoom: 8,
+		/**
+		 * [styles set map style]
+		 * @type {Array}
+		 */
+		styles: [{
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#315274"
+				}]
+			},
+			{
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#ffffff"
+				}]
+			},
+			{
+				"elementType": "labels.text.stroke",
+				"stylers": [{
+					"color": "#1a3646"
+				}]
+			},
+			{
+				"featureType": "administrative.country",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"color": "#315274"
+				}]
+			},
+			{
+				"featureType": "administrative.province",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"color": "#315274"
+				}]
+			},
+			{
+				"featureType": "landscape.natural",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#315274"
+				}]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#ffffff"
+				}]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "geometry.fill",
+				"stylers": [{
+					"color": "#315274"
+				}]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#ffffff"
+				}]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#0f1923"
+				}]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#ffffff"
+				}]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"color": "#0f1924"
+				}]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#0f1924"
+				}]
+			},
+			{
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"color": "#ffffff"
+				}]
+			}
+		]
+	});
 }
-
-
-$('.progress').each(function() {
-  $(this).hover(
-    function() {
-      $(this).addClass('active');
-    },
-    function() {
-      $(this).removeClass('active');
-    }
-  );
-});

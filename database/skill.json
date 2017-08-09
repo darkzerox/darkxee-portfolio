@@ -1,0 +1,49 @@
+[{
+	"name": "Html",
+	"power": 85,
+	"cate": "frontend"
+}, {
+	"name": "Css/Sass",
+	"power": 80,
+	"cate": "frontend"
+}, {
+	"name": "Js",
+	"power": 70,
+	"cate": "frontend"
+}, {
+	"name": "PHP",
+	"power": 75,
+	"cate": "backend"
+}, {
+	"name": "Mysql",
+	"power": 84,
+	"cate": "backend"
+},{
+	"name": "NodeJs",
+	"power": 30,
+	"cate": "backend"
+}, {
+	"name": "Nginx",
+	"power": 80,
+	"cate": "server"
+}, {
+	"name": "Apache",
+	"power": 72,
+	"cate": "server"
+}, {
+	"name": "Linux",
+	"power": 70,
+	"cate": "server"
+}, {
+	"name": "UX/UI",
+	"power": 65,
+	"cate": "design"
+}, {
+	"name": "Ps",
+	"power": 70,
+	"cate": "design"
+}, {
+	"name": "Ai",
+	"power": 40,
+	"cate": "design"
+}]
