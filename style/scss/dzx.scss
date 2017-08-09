@@ -1,10 +1,11 @@
-.row{
+.row {
   margin: 0;
 }
+
 .logo {
   max-width: 250px;
   margin: auto;
-  background: #2c3e50;
+  background: $theme-primary;
   border-radius: 50%;
   padding: 25px;
 
@@ -45,4 +46,12 @@
   h2 {
     text-transform: inherit;
   }
+}
+
+.box {
+  background: $theme-primary;
+  border-radius: 10px;
+  display: table;
+  width: 100%;
+  margin-bottom: 30px;
 }

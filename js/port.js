@@ -185,3 +185,15 @@ function initMap() {
     ]
   });
 }
+
+
+$('.progress').each(function() {
+  $(this).hover(
+    function() {
+      $(this).addClass('active');
+    },
+    function() {
+      $(this).removeClass('active');
+    }
+  );
+});
