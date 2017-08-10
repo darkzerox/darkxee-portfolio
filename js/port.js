@@ -105,16 +105,16 @@ $.getJSON("/database/skill.json", function(data) {
 	$.each(data, function(key, field) {
 
 		if (field.cate === "frontend") {
-			s_fontN.push(skillbar(field.name, field.power,key));
+			s_fontN.push(skillbar(field.name, field.power));
 		}
 		if (field.cate === "backend") {
-			s_backN.push(skillbar(field.name, field.power,key));
+			s_backN.push(skillbar(field.name, field.power));
 		}
 		if (field.cate === "design") {
-			s_design.push(skillbar(field.name, field.power,key));
+			s_design.push(skillbar(field.name, field.power));
 		}
 		if (field.cate === "server") {
-			s_server.push(skillbar(field.name, field.power,key));
+			s_server.push(skillbar(field.name, field.power));
 		}
 	});
 
@@ -133,26 +133,17 @@ $.getJSON("/database/skill.json", function(data) {
  * @param  {number} power get percent
  * @return {string} html data
  */
-function skillbar(name, power,key) {
-  var is_color = ""
-  if (key % 1 === 0){
-    is_color = "#7d3939";
-  }
-  if (key % 2 === 0){
-    is_color = "#088";
-  }
-  if (key % 3 === 0){
-    is_color = "#0d543b";
-  }
-  if (key % 4 === 0){
-    is_color = "#5d1a60";
-  }
+function skillbar(name, power) {
+	var key = Math.floor(Math.random() * 11) + 1  ;
+
+  var is_color = ['#684ad7','#7d3939','#088','#0d543b','#5d1a60','#0ea015','#857104','#9a0842','#911111','#11914c','#113c91'];
+
 
 	return `<div class="skill-g">
             <div class="col-md-3 "><p class="text-center">${name}</p></div>
             <div class="col-md-9">
               <div class="progress">
-                <div class="progress-bar  progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="${power}" aria-valuemin="0" aria-valuemax="100" style="width:0; background-color:${is_color}">
+                <div class="progress-bar  progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="${power}" aria-valuemin="0" aria-valuemax="100" style="width:0; background-color:${is_color[key]}">
                 </div>
               </div>
             </div>
