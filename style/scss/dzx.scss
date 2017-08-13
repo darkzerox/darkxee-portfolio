@@ -54,21 +54,28 @@
 	display: table;
 	width: 100%;
 	margin-bottom: 30px;
-  h3{
-    background: $color-therd;
-    color: $theme-primary;
-    margin: 10px 10px 20px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0px 0 1px 1px #000;
-  }
+
+	h3 {
+		background: $color-therd;
+		color: $theme-primary;
+		margin: 10px 10px 20px;
+		padding: 10px;
+		border-radius: 10px;
+		box-shadow: inset 0 0 1px 1px #000;
+	}
 }
+
 .skill-g {
-  p {
-      font-size: 18px;
-      line-height: 20px;
-  }
+	p {
+		font-size: 18px;
+		line-height: 20px;
+	}
 }
-.margin-20{
+
+.margin-20 {
 	margin: 20px;
+}
+
+.btn-filter{
+	margin-bottom: 30px;
 }

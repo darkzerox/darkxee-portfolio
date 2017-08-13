@@ -1,7 +1,7 @@
 $(window).load(function() {
 
 	$('.box').each(function() {
-    var p_bar = $(this).find('.progress-bar');
+		var p_bar = $(this).find('.progress-bar');
 		$(this).hover(
 			function() {
 				p_bar.addClass('active');
@@ -11,11 +11,11 @@ $(window).load(function() {
 			}
 		);
 	});
-  $('.progress-bar').each(function() {
-    $(this).animate({
-      width: $(this).attr('aria-valuenow')+'%',
-    }, 3000, 'linear');
-  });
+	$('.progress-bar').each(function() {
+		$(this).animate({
+			width: $(this).attr('aria-valuenow') + '%'
+		});
+	});
 
 
 
@@ -33,7 +33,7 @@ $.getJSON("/database/portfolio.json", function(data) {
 	var port_pop = [];
 	$.each(data, function(key, field) {
 		port_data.push(`
-      <div class="col-sm-4 portfolio-item group-${field.cateogry}">
+      <div class="col-sm-4 gallery_product portfolio-item filter group-${field.cateogry} ${field.cateogry} ">
         <a href="#${field.name}" class="portfolio-link" data-toggle="modal" rel="noindex nofollow">
           <div class="caption">
             <div class="caption-content">
@@ -134,9 +134,9 @@ $.getJSON("/database/skill.json", function(data) {
  * @return {string} html data
  */
 function skillbar(name, power) {
-	var key = Math.floor(Math.random() * 11) + 1  ;
+	var key = Math.floor(Math.random() * 11) + 1;
 
-  var is_color = ['#684ad7','#7d3939','#088','#0d543b','#5d1a60','#0ea015','#857104','#9a0842','#911111','#11914c','#113c91'];
+	var is_color = ['#684ad7', '#7d3939', '#088', '#0d543b', '#5d1a60', '#0ea015', '#857104', '#9a0842', '#911111', '#11914c', '#113c91'];
 
 
 	return `<div class="skill-g">
@@ -265,3 +265,22 @@ function initMap() {
 		]
 	});
 }
+
+
+
+$(".filter-button").click(function() {
+	var value = $(this).attr('data-filter');
+	if (value == "All") {
+		$('.filter').slideDown('1000');
+	} else {
+		$(".filter").not('.' + value).slideUp('3000');
+		$('.filter').filter('.' + value).slideDown('3000');
+
+	}
+
+
+if ($(".filter-button").removeClass("active")) {
+	$(this).removeClass("active");
+}
+$(this).addClass("active");
+});
