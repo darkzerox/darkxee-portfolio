@@ -28,7 +28,7 @@ $(window).load(function() {
  * @param  {string} data get url path
  * @return {string}  return and appendTo div
  */
-$.getJSON("/database/portfolio.json", function(data) {
+$.getJSON("/asset/database/portfolio.json", function(data) {
 	var port_data = [];
 	var port_pop = [];
 	$.each(data, function(key, field) {
@@ -41,7 +41,7 @@ $.getJSON("/database/portfolio.json", function(data) {
               <div class="port-pop-title"><h2>${field.name}</h2></div>
             </div>
           </div>
-          <img src="img/portfolio/${field.img}" class="img-responsive alt="${field.name}">
+          <img src="/asset/img/portfolio/${field.img}" class="img-responsive alt="${field.name}">
         </a>
       </div>
     `);
@@ -61,7 +61,7 @@ $.getJSON("/database/portfolio.json", function(data) {
                 <div class="modal-body">
                   <h2>${field.name}</h2>
                   <hr class="star-primary">
-                  <img src="img/portfolio/${field.img}" class="img-responsive img-centered" alt="${field.name}">
+                  <img src="/asset/img/portfolio/${field.img}" class="img-responsive img-centered" alt="${field.name}">
                   <p>${field.desc}</p>
                   <ul class="list-inline item-details">
                     <li>Site:
@@ -97,7 +97,7 @@ $.getJSON("/database/portfolio.json", function(data) {
  * @param  {string} data get url path
  * @return {string} return and appendTo div
  */
-$.getJSON("/database/skill.json", function(data) {
+$.getJSON("/asset/database/skill.json", function(data) {
 	var s_fontN = [];
 	var s_backN = [];
 	var s_design = [];

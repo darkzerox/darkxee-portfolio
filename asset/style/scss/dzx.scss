@@ -79,3 +79,14 @@
 .btn-filter{
 	margin-bottom: 30px;
 }
+
+#contact{
+	.contact-icon{
+		font-size: 5em;
+		padding:30px;
+		color:$theme-primary;
+		&:hover{
+			color:$color-therd;
+		}
+	}
+}
