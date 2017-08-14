@@ -162,7 +162,7 @@ function initMap() {
 			lat: 13.7364836,
 			lng: 100.5235114
 		},
-		zoom: 8,
+		zoom: 12,
 		/**
 		 * [styles set map style]
 		 * @type {Array}
