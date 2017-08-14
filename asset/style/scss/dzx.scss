@@ -1,3 +1,4 @@
+@import "variables";
 .row {
 	margin: 0;
 }
@@ -89,4 +90,14 @@
 			color:$color-therd;
 		}
 	}
+}
+
+hr:after{
+    transition-duration: 1s;
+		.row:hover & {
+			transform: rotate(180deg);
+	    transition-duration: 1s;
+	    border-radius: 50%;
+	    background: #5e9ddd;
+		}
 }
