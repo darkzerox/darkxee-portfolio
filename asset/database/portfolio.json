@@ -1,4 +1,11 @@
 [{
+  "name": "SinghaArsa",
+  "img": "singarsa.jpg",
+  "site": "https://www.singha-arsa.org/",
+  "date": "2016-2017",
+  "cateogry": "Profile",
+  "desc": "สิงห์อาสาคือ “ความปรารถนา” และ “ภารกิจ” ของคนกลุ่มหนึ่งที่ต้องการให้โลกน่าอยู่ขึ้น\r\nเพราะเราเปลี่ยนโลกของใครบางคนได้"
+},{
   "name": "Lovebigbike",
   "img": "lbb.jpg",
   "site": "http://www.lovebigbike.com",
@@ -75,11 +82,4 @@
   "date": 2016,
   "cateogry": "Profile",
   "desc": "We are able to provide High Performance HPL solutions that cater to the specific needs of IT rooms, Laboratories and other specialized industries."
-}, {
-  "name": "SinghaArsa",
-  "img": "singarsa.jpg",
-  "site": "https://www.singha-arsa.org/",
-  "date": "2016-2017",
-  "cateogry": "Profile",
-  "desc": "สิงห์อาสาคือ “ความปรารถนา” และ “ภารกิจ” ของคนกลุ่มหนึ่งที่ต้องการให้โลกน่าอยู่ขึ้น\r\nเพราะเราเปลี่ยนโลกของใครบางคนได้"
 }]
