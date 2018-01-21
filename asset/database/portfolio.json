@@ -58,28 +58,28 @@
   "name": "Shellhut",
   "img": "shellhut.jpg",
   "site": "http://www.shellhutentertainment.com",
-  "date": 2016,
+  "date": "2016",
   "cateogry": "Profile",
   "desc": "จัดทำเว็บไซด์ onepage site"
 }, {
   "name": "Olympiathai",
   "img": "olym.jpg",
   "site": "http://www.olympiathai.com",
-  "date": 2016-2017,
+  "date": "2016-2017",
   "cateogry": "Ecommerce",
   "desc": "จัดทำระบบร้านค้า เว็บไซ์"
 }, {
   "name": "DoublePlus",
   "img": "dbpth.jpg",
   "site": "http://www.dbpth.com/",
-  "date": 2017,
+  "date": "2017",
   "cateogry": "Property",
   "desc":"ย้ายฐานข้อมูลจากระบบเดิม asp.net มายัง wordpress พร้อมออกแบบระบบ property "
 }, {
   "name": "Treehomegroup",
   "img": "thg.jpg",
   "site": "http://treehomegroup.com/",
-  "date": 2016,
+  "date": "2016",
   "cateogry": "Profile",
   "desc": "ทำเว็บไซด์ company profile"
 }]
