@@ -7,7 +7,7 @@
 	"power": 80,
 	"cate": "frontend"
 }, {
-	"name": "Js",
+	"name": "Js, Vue.js, Nuxt.js",
 	"power": 70,
 	"cate": "frontend"
 }, {
@@ -46,4 +46,7 @@
 	"name": "Ai",
 	"power": 40,
 	"cate": "design"
-}]
+}
+
+
+]
