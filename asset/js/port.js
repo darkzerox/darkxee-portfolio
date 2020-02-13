@@ -271,12 +271,12 @@ function initMap() {
 $(".filter-button").click(function() {
 	var value = $(this).attr('data-filter');
 	if (value == "All") {
-		// $('.filter').slideDown('1000');
-		$('.filter').removeClass('item-hide')
+		$('.filter').show('15000');
 	} else {
-		$(".filter").not('.' + value).addClass('item-hide')
-		$('.filter').filter('.' + value).removeClass('item-hide')
-
+		$(".filter").not('.' + value).hide('15000');
+		$('.filter').filter('.' + value).show('15000');
+		
+ 
 	}
 
 
