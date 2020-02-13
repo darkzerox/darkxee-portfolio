@@ -96,4 +96,38 @@
   "date": "2018",
   "cateogry": "Ecommerce",
   "desc": "ทำเว็บไซต์ company profile"
-}]
+},
+{
+  "name": "Magnetolabs",
+  "img": "magneto.jpg",
+  "site": "https://magnetolabs.com/",
+  "date": "2019-2020",
+  "cateogry": "Profile",
+  "desc": "ทำเว็บไซต์ company profile"
+},
+{
+  "name": "Sansiri Blog",
+  "img": "sansiri.jpg",
+  "site": "https://blog.sansiri.com/",
+  "date": "2019-2020",
+  "cateogry": "Blog",
+  "desc": "ทำเว็บไซต์ web blog"
+},
+{
+  "name": "Calcula'te",
+  "img": "cal_shifu.jpg",
+  "site": "https://calculate.contentshifu.com/",
+  "date": "2019-2020",
+  "cateogry": "Webapp",
+  "desc": "Web App คำนวนราคาการทำเว็บไซต์"
+},
+{
+  "name": "Calcula.To",
+  "img": "cal_magneto.jpg",
+  "site": "https://calculate.contentshifu.com/",
+  "date": "2019-2020",
+  "cateogry": "Webapp",
+  "desc": "Web App คำนวนราคาการทำเว็บไซต์"
+}
+
+]
