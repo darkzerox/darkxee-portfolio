@@ -140,8 +140,8 @@ function skillbar(name, power) {
 
 
 	return `<div class="skill-g">
-            <div class="col-md-3 "><p class="text-center">${name}</p></div>
-            <div class="col-md-9">
+            <div class="col-md-4 "><p class="text-center">${name}</p></div>
+            <div class="col-md-8">
               <div class="progress">
                 <div class="progress-bar  progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="${power}" aria-valuemin="0" aria-valuemax="100" style="width:0; background-color:${is_color[key]}">
                 </div>
