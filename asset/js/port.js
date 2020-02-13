@@ -273,8 +273,8 @@ $(".filter-button").click(function() {
 	if (value == "All") {
 		$('.filter').slideDown('1000');
 	} else {
-		$(".filter").not('.' + value).slideUp('3000');
-		$('.filter').filter('.' + value).slideDown('3000');
+		$(".filter").not('.' + value).removeClass('item-show')
+		$('.filter').filter('.' + value).addClass('item-show')
 
 	}
 
