@@ -271,7 +271,8 @@ function initMap() {
 $(".filter-button").click(function() {
 	var value = $(this).attr('data-filter');
 	if (value == "All") {
-		$('.filter').slideDown('1000');
+		// $('.filter').slideDown('1000');
+		$('.filter').removeClass('item-hide')
 	} else {
 		$(".filter").not('.' + value).addClass('item-hide')
 		$('.filter').filter('.' + value).removeClass('item-hide')
