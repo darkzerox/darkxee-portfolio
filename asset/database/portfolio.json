@@ -1,133 +1,146 @@
-[{
-  "name": "SinghaArsa",
-  "img": "singarsa.jpg",
-  "site": "https://www.singha-arsa.org/",
-  "date": "2016-2019",
-  "cateogry": "Profile",
-  "desc": "จัดทำเว็บไซต์ ระบบปักหมุดบนแผนที่ portfolio blog"
-},{
-  "name": "Lovebigbike",
-  "img": "lbb.jpg",
-  "site": "http://www.lovebigbike.com",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า โปรโมชัน "
-}, {
-  "name": "Loveyouflower",
-  "img": "lyf.jpg",
-  "site": "http://www.loveyouflower.com/",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ความหลากหลายของสินค้า"
-}, {
-  "name": "WreathNawat",
-  "img": "wnw.jpg",
-  "site": "http://www.wreathnawat.com/",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
-}, {
-  "name": "WreathMala",
-  "img": "wre.jpg",
-  "site": "http://www.wreathmala.com/",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
-}, {
-  "name": "LewWreath",
-  "img": "lew.jpg",
-  "site": "https://www.lewreath.com/",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
-}, {
-  "name": "FruitNFlora",
-  "img": "fnf.jpg",
-  "site": "http://www.fruitnflora.com/",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า โดยใช้ Bigcommerce"
-}, {
-  "name": "Pim123",
-  "img": "pim123.jpg",
-  "site": "http://www.pim123.com",
-  "date": "2015-2019",
-  "cateogry": "Ecommerce",
-  "desc":"ออกแบบระบบร้านค้า การคำนวนราคานามบัตร สร้างนามบัตรออนไลน์ "
-}, {
-  "name": "Shellhut",
-  "img": "shellhut.jpg",
-  "site": "http://www.shellhutentertainment.com",
-  "date": "2016",
-  "cateogry": "Profile",
-  "desc": "จัดทำเว็บไซต์ onepage site"
-}, {
-  "name": "Olympiathai",
-  "img": "olym.jpg",
-  "site": "http://www.olympiathai.com",
-  "date": "2016-2017",
-  "cateogry": "Ecommerce",
-  "desc": "จัดทำระบบร้านค้า เว็บไซต์"
-}, {
-  "name": "DoublePlus",
-  "img": "dbpth.jpg",
-  "site": "http://doubleplusthailand.com/",
-  "date": "2017-2019",
-  "cateogry": "Property",
-  "desc":"ย้ายฐานข้อมูลจากระบบเดิม asp.net มายัง wordpress พร้อมออกแบบระบบ property "
-}, {
-  "name": "Treehomegroup",
-  "img": "thg.jpg",
-  "site": "http://treehomegroup.com/",
-  "date": "2016",
-  "cateogry": "Profile",
-  "desc": "ทำเว็บไซต์ company profile"
-}, {
-  "name": "WreathStation",
-  "img": "wst.jpg",
-  "site": "https://www.wreathstation.com/",
-  "date": "2018",
-  "cateogry": "Ecommerce",
-  "desc": "ทำเว็บไซค์ทั้งระบบ"
-}, {
-  "name": "Aflowerroom",
-  "img": "afr.jpg",
-  "site": "https://www.aflowerroom.com/",
-  "date": "2018",
-  "cateogry": "Ecommerce",
-  "desc": "ทำเว็บไซค์ทั้งระบบ"
-},
-{
-  "name": "Magnetolabs",
-  "img": "magneto.jpg",
-  "site": "https://magnetolabs.com/",
-  "date": "2019-2020",
-  "cateogry": "Profile",
-  "desc": "ทำเว็บไซต์ company profile"
-},
-{
-  "name": "Sansiri_Blog",
-  "img": "sansiri.jpg",
-  "site": "https://blog.sansiri.com/",
-  "date": "2019-2020",
-  "cateogry": "Blog",
-  "desc": "ทำเว็บไซต์ web blog"
-},
-{
-  "name": "Calcula_te",
-  "img": "cal_shifu.jpg",
-  "site": "https://calculate.contentshifu.com/",
-  "date": "2019-2020",
-  "cateogry": "Webapp",
-  "desc": "Web App คำนวนราคาการทำเว็บไซต์"
-},
-{
-  "name": "Calcula_To",
-  "img": "cal_magneto.jpg",
-  "site": "https://calculate.contentshifu.com/",
-  "date": "2019-2020",
-  "cateogry": "Webapp",
-  "desc": "Web App คำนวนราคาการทำเว็บไซต์"
-}
-
+[
+  {
+    "name": "SinghaArsa",
+    "img": "singarsa.jpg",
+    "site": "https://www.singha-arsa.org/",
+    "date": "2016-2019",
+    "cateogry": "Profile",
+    "desc": "จัดทำเว็บไซต์ ระบบปักหมุดบนแผนที่ portfolio blog"
+  },
+  {
+    "name": "Lovebigbike",
+    "img": "lbb.jpg",
+    "site": "http://www.lovebigbike.com",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า โปรโมชัน "
+  },
+  {
+    "name": "Loveyouflower",
+    "img": "lyf.jpg",
+    "site": "http://www.loveyouflower.com/",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ความหลากหลายของสินค้า"
+  },
+  {
+    "name": "WreathNawat",
+    "img": "wnw.jpg",
+    "site": "http://www.wreathnawat.com/",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
+  },
+  {
+    "name": "WreathMala",
+    "img": "wre.jpg",
+    "site": "http://www.wreathmala.com/",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
+  },
+  {
+    "name": "LewWreath",
+    "img": "lew.jpg",
+    "site": "https://www.lewreath.com/",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า ระบบค้นหาวัด"
+  },
+  {
+    "name": "FruitNFlora",
+    "img": "fnf.jpg",
+    "site": "http://www.fruitnflora.com/",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำเว็บไซต์ ออกแบบระบบร้านค้า โดยใช้ Bigcommerce"
+  },
+  {
+    "name": "Pim123",
+    "img": "pim123.jpg",
+    "site": "http://www.pim123.com",
+    "date": "2015-2019",
+    "cateogry": "Ecommerce",
+    "desc": "ออกแบบระบบร้านค้า การคำนวนราคานามบัตร สร้างนามบัตรออนไลน์ "
+  },
+  {
+    "name": "Shellhut",
+    "img": "shellhut.jpg",
+    "site": "http://www.shellhutentertainment.com",
+    "date": "2016",
+    "cateogry": "Profile",
+    "desc": "จัดทำเว็บไซต์ onepage site"
+  },
+  {
+    "name": "Olympiathai",
+    "img": "olym.jpg",
+    "site": "http://www.olympiathai.com",
+    "date": "2016-2017",
+    "cateogry": "Ecommerce",
+    "desc": "จัดทำระบบร้านค้า เว็บไซต์"
+  },
+  {
+    "name": "DoublePlus",
+    "img": "dbpth.jpg",
+    "site": "http://doubleplusthailand.com/",
+    "date": "2017-2019",
+    "cateogry": "Property",
+    "desc": "ย้ายฐานข้อมูลจากระบบเดิม asp.net มายัง wordpress พร้อมออกแบบระบบ property "
+  },
+  {
+    "name": "Treehomegroup",
+    "img": "thg.jpg",
+    "site": "http://treehomegroup.com/",
+    "date": "2016",
+    "cateogry": "Profile",
+    "desc": "ทำเว็บไซต์ company profile"
+  },
+  {
+    "name": "WreathStation",
+    "img": "wst.jpg",
+    "site": "https://www.wreathstation.com/",
+    "date": "2018",
+    "cateogry": "Ecommerce",
+    "desc": "ทำเว็บไซค์ทั้งระบบ"
+  },
+  {
+    "name": "Aflowerroom",
+    "img": "afr.jpg",
+    "site": "https://www.aflowerroom.com/",
+    "date": "2018",
+    "cateogry": "Ecommerce",
+    "desc": "ทำเว็บไซค์ทั้งระบบ"
+  },
+  {
+    "name": "Magnetolabs",
+    "img": "magneto.jpg",
+    "site": "https://magnetolabs.com/",
+    "date": "2019-2020",
+    "cateogry": "Profile",
+    "desc": "ทำเว็บไซต์ company profile"
+  },
+  {
+    "name": "Sansiri_Blog",
+    "img": "sansiri.jpg",
+    "site": "https://blog.sansiri.com/",
+    "date": "2019-2020",
+    "cateogry": "Blog",
+    "desc": "ทำเว็บไซต์ web blog"
+  },
+  {
+    "name": "Calcula_te",
+    "img": "cal_shifu.jpg",
+    "site": "https://calculate.contentshifu.com/",
+    "date": "2019-2020",
+    "cateogry": "Webapp",
+    "desc": "Web App คำนวนราคาการทำเว็บไซต์"
+  },
+  {
+    "name": "Calcula_To",
+    "img": "cal_magneto.jpg",
+    "site": "https://calculato.magnetolabs.com/",
+    "date": "2019-2020",
+    "cateogry": "Webapp",
+    "desc": "Web App คำนวนราคาการทำเว็บไซต์"
+  }
 ]
