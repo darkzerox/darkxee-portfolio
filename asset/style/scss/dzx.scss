@@ -1,14 +1,16 @@
 @import "variables";
+
 .row {
 	margin: 0;
 }
 
 .logo {
-	max-width: 250px;
 	margin: auto;
 	background: $theme-primary;
 	border-radius: 50%;
 	padding: 25px;
+	width: 200px;
+	height: 200px;
 
 	img {
 		margin: 0;
@@ -77,28 +79,30 @@
 	margin: 20px;
 }
 
-.btn-filter{
+.btn-filter {
 	margin-bottom: 30px;
 }
 
-#contact{
-	.contact-icon{
+#contact {
+	.contact-icon {
 		font-size: 5em;
-		padding:30px;
-		color:$theme-primary;
-		&:hover{
-			color:$color-therd;
+		padding: 30px;
+		color: $theme-primary;
+
+		&:hover {
+			color: $color-therd;
 		}
 	}
 }
 
-hr:after{
-    transition-duration: 1s;
-		.row:hover & {
-			transform: rotate(180deg);
-	    transition-duration: 1s;
-	    border-radius: 50%;
-	    background: #5e9ddd;
-			color:#fff;
-		}
+hr:after {
+	transition-duration: 1s;
+
+	.row:hover & {
+		transform: rotate(180deg);
+		transition-duration: 1s;
+		border-radius: 50%;
+		background: #5e9ddd;
+		color: #fff;
+	}
 }
