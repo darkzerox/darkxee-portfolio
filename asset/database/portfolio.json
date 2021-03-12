@@ -81,7 +81,7 @@
   "site": "http://treehomegroup.com/",
   "date": "2016",
   "cateogry": "Profile",
-  "desc": "ทำเว็บไซต์ company profile"
+  "desc": "ทำเว็บไซต์ Company profile"
 }, {
   "name": "WreathStation",
   "img": "wst.jpg",
@@ -103,7 +103,7 @@
   "site": "https://magnetolabs.com/",
   "date": "2019-2020",
   "cateogry": "Profile",
-  "desc": "ทำเว็บไซต์ company profile"
+  "desc": "ทำเว็บไซต์ Company profile"
 },
 {
   "name": "Sansiri_Blog",
@@ -128,6 +128,31 @@
   "date": "2019-2020",
   "cateogry": "Webapp",
   "desc": "Web App คำนวนราคาการทำเว็บไซต์"
+},
+
+{
+  "name": "AVL",
+  "img": "avl.jpg",
+  "site": "https://avl.co.th/",
+  "date": "2020-2021",
+  "cateogry": "Profile",
+  "desc": "ทำเว็บไซต์ Company profile และ Web blog"
+},
+{
+  "name": "Talon",
+  "img": "talon.jpg",
+  "site": "https://talon.travel/",
+  "date": "2020-2021",
+  "cateogry": "Blog",
+  "desc": "ทำเว็บไซต์ web blog"
+},
+{
+  "name": "WDC",
+  "img": "wdc.jpg",
+  "site": "https://wdc.co.th/",
+  "date": "2020-2021",
+  "cateogry": "Profile",
+  "desc": "ทำเว็บไซต์ Company profile, Web blog และ Product Catalog "
 }
 
 ]
