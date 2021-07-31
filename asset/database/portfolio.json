@@ -218,5 +218,13 @@
     "cateogry": "Profile",
     "desc": "ทำเว็บไซต์ Company profile, Web blog และ Product Catalog "
   }
+  {
+    "name": "Thainakarin",
+    "img": "tnh.jpg",
+    "site": "http://thainakarin.co.th/",
+    "date": "2021",
+    "cateogry": "Profile",
+    "desc": "ทำเว็บไซต์ Company profile, Web blog, ระบบนัดหมายแพทย์"
+  }
 
 ]
