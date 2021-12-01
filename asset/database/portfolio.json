@@ -221,10 +221,18 @@
   {
     "name": "Thainakarin",
     "img": "tnh.jpg",
-    "site": "http://thainakarin.co.th/",
+    "site": "https://thainakarin.co.th/",
     "date": "2021",
     "cateogry": "Profile",
     "desc": "ทำเว็บไซต์ Company profile, Web blog, ระบบนัดหมายแพทย์"
+  },
+  {
+    "name": "ChivitdOnline",
+    "img": "cvd.jpg",
+    "site": "https://chivitdonline.com/",
+    "date": "2021",
+    "cateogry": "Ecommerce",
+    "desc": "เว็บไซต์ Ecommerce ซื้อขายของออนไลน์"
   }
 
 ]
