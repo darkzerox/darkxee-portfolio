@@ -10,7 +10,17 @@
 		"cate": "frontend"
 	},
 	{
-		"name": "Ts,Nuxt,Next",
+		"name": "Ts",
+		"power": 70,
+		"cate": "frontend"
+	},
+	{
+		"name": "Nuxt",
+		"power": 70,
+		"cate": "frontend"
+	},
+	{
+		"name": "Next",
 		"power": 70,
 		"cate": "frontend"
 	},
@@ -20,13 +30,44 @@
 		"cate": "backend"
 	},
 	{
-		"name": "Mysql, Mongo",
-		"power": 84,
+		"name": "MySQL",
+		"power": 85,
+		"cate": "database"
+	},
+	{
+		"name": "MongoDB",
+		"power": 80,
+		"cate": "database"
+	},
+	{
+		"name": "PostgreSQL",
+		"power": 75,
+		"cate": "database"
+	},
+	{
+		"name": "Node",
+		"power": 80,
 		"cate": "backend"
 	},
 	{
-		"name": "NodeJs, BunJs",
+		"name": "Nest",
+		"power": 70,
+		"cate": "backend"
+	},
+	
+	{
+		"name": "Bun",
 		"power": 60,
+		"cate": "backend"
+	},
+	{
+		"name": "Elysia",
+		"power": 60,
+		"cate": "backend"
+	},
+	{
+		"name": "Hono",
+		"power": 50,
 		"cate": "backend"
 	},
 	{
@@ -45,18 +86,63 @@
 		"cate": "server"
 	},
 	{
+		"name": "Google Cloud",
+		"power": 60,
+		"cate": "server"
+	},
+	{
+		"name": "Aws",
+		"power": 60,
+		"cate": "server"
+	},
+	{
 		"name": "UX/UI",
 		"power": 65,
 		"cate": "design"
 	},
 	{
-		"name": "Ps",
+		"name": "Photoshop",
 		"power": 40,
 		"cate": "design"
 	},
 	{
-		"name": "Ai",
-		"power": 40,
+		"name": "Illustrator",
+		"power": 45,
 		"cate": "design"
+	},
+	{
+		"name": "Figma",
+		"power": 75,
+		"cate": "design"
+	},
+	{
+		"name": "Canva",
+		"power": 80,
+		"cate": "design"
+	},
+	{
+		"name": "CapCut",
+		"power": 70,
+		"cate": "design"
+	},
+	{
+		"name": "Ai",
+		"power": 60,
+		"cate": "ai & automation"
+	},
+	{
+		"name": "n8n",
+		"power": 80,
+		"cate": "ai & automation"
+	},
+	{
+		"name": "Sqlite",
+		"power": 70,
+		"cate": "database"
+	},
+	{
+		"name": "MCP",
+		"power": 40,
+		"cate": "ai & automation"
 	}
 ]
