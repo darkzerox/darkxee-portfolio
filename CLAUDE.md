@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a portfolio website project that combines a legacy static site with a modern full-stack application. The project includes:
 
 - **Frontend**: Modern Vite.js + Tailwind CSS application with vanilla JavaScript components
-- **Backend**: Express.js API server with SQLite database using better-sqlite3
+- **Backend**: Express.js API server with MongoDB with Prisma ORM
 - **Legacy Assets**: Original Jekyll-based static site assets in `/asset/` directory
-- **Database Migration**: Scripts to migrate from JSON files to SQLite database
+- **Database Migration**: Scripts to migrate from JSON files to MongoDB database
 
 ## Development Commands
 
@@ -33,7 +33,7 @@ pnpm server
 
 ### Database Operations
 ```bash
-# Migrate data from JSON files to SQLite database
+# Migrate data from JSON files to MongoDB using Prisma ORM
 pnpm migrate
 ```
 
@@ -71,9 +71,9 @@ The project maintains both legacy and modern structures:
 
 ### API Architecture
 - **Server**: Express.js server (`server.js`) handles both API routes and static file serving
-- **Database**: SQLite database with better-sqlite3 for portfolio and skills data
+- **Database**: MongoDB database managed with Prisma ORM for portfolio and skills data
 - **Routes**: API endpoints in `/src/routes/` for portfolio (`/api/portfolio`) and skills (`/api/skills`)
-- **Services**: Database abstraction layer in `/src/services/DatabaseService.js`
+- **Services**: Database abstraction layer in `/src/services/MongoDBService.js`
 
 ### Frontend Architecture
 - **Entry Point**: `index.html` → `/src/main.js`
@@ -109,7 +109,7 @@ The project maintains both legacy and modern structures:
 
 ### Development Patterns
 - **ES Modules**: All files use modern import/export syntax
-- **Database Access**: Use `DatabaseService` class, never direct SQL queries
+- **Database Access**: Use `MongoDBService` class for all database operations
 - **API Responses**: Consistent JSON format with `success`, `data`, `error` fields
 - **Error Handling**: Graceful error handling with different responses for dev/prod
 
@@ -143,9 +143,9 @@ Skills data in `asset/database/skill.json`:
 - Use `pnpm run dev:server` for API development
 
 ### Database Development
-- SQLite database created in `/data/portfolio.db`
-- Use migration script after changing JSON data structure
-- Database service includes prepared statements for performance
+- MongoDB database configured via `DATABASE_URL` environment variable
+- Use Prisma's migration tools after changing data structure
+- Database service includes connection pooling and error handling
 - WAL mode enabled for better concurrent access
 
 ### Code Style

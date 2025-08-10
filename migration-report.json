@@ -1,0 +1,22 @@
+{
+  "startTime": "2025-08-10T08:40:15.346Z",
+  "endTime": "2025-08-10T08:40:19.329Z",
+  "portfolioMigrated": 29,
+  "skillsMigrated": 29,
+  "errors": [],
+  "warnings": [],
+  "dataSources": [
+    {
+      "type": "Portfolio JSON",
+      "path": "/Users/light/Data/darkzerox.github.io/asset/database/portfolio.json",
+      "records": 29
+    },
+    {
+      "type": "Skills JSON",
+      "path": "/Users/light/Data/darkzerox.github.io/asset/database/skill.json",
+      "records": 29
+    }
+  ],
+  "duration": 3983,
+  "success": true
+}

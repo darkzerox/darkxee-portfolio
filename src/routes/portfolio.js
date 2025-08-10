@@ -49,11 +49,19 @@ router.get('/', validatePortfolioFilters, async (req, res) => {
       })
     }
 
+    // Check database connection
+    if (!dbService.isConnected()) {
+      return res.status(503).json({
+        success: false,
+        error: 'Database connection unavailable',
+      })
+    }
+
     let portfolioItems
     if (category && category !== 'All') {
-      portfolioItems = dbService.getPortfolioItemsByCategory(category)
+      portfolioItems = await dbService.getPortfolioItemsByCategory(category)
     } else {
-      portfolioItems = dbService.getAllPortfolioItems()
+      portfolioItems = await dbService.getAllPortfolioItems()
     }
 
     // Apply pagination if specified
@@ -76,6 +84,24 @@ router.get('/', validatePortfolioFilters, async (req, res) => {
     })
   } catch (error) {
     console.error('Error fetching portfolio items:', error)
+    
+    // Handle MongoDB-specific errors
+    if (error.name === 'MongoNetworkError' || error.name === 'MongoServerSelectionError') {
+      return res.status(503).json({
+        success: false,
+        error: 'Database connection error',
+        message: process.env.NODE_ENV === 'development' ? error.message : 'Service temporarily unavailable',
+      })
+    }
+    
+    if (error.name === 'MongoTimeoutError') {
+      return res.status(504).json({
+        success: false,
+        error: 'Database timeout',
+        message: process.env.NODE_ENV === 'development' ? error.message : 'Request timeout',
+      })
+    }
+    
     res.status(500).json({
       success: false,
       error: 'Failed to fetch portfolio items',
@@ -100,22 +126,29 @@ router.get('/:id', async (req, res) => {
       })
     }
 
-    // Validate ID
-    if (!id || isNaN(parseInt(id)) || parseInt(id) < 1) {
-      return res.status(400).json({
+    // Check database connection
+    if (!dbService.isConnected()) {
+      return res.status(503).json({
         success: false,
-        error: 'Invalid portfolio item ID. ID must be a positive integer.',
+        error: 'Database connection unavailable',
       })
     }
 
-    const portfolioId = parseInt(id)
-    const portfolioItem = dbService.getPortfolioItemById(portfolioId)
+    // For MongoDB, we accept both ObjectId strings and legacy integer IDs
+    if (!id || id.trim() === '') {
+      return res.status(400).json({
+        success: false,
+        error: 'Portfolio item ID is required',
+      })
+    }
+
+    const portfolioItem = await dbService.getPortfolioItemById(id)
 
     if (!portfolioItem) {
       return res.status(404).json({
         success: false,
         error: 'Portfolio item not found',
-        id: portfolioId,
+        id: id,
       })
     }
 
@@ -125,6 +158,33 @@ router.get('/:id', async (req, res) => {
     })
   } catch (error) {
     console.error('Error fetching portfolio item:', error)
+    
+    // Handle MongoDB-specific errors
+    if (error.name === 'MongoNetworkError' || error.name === 'MongoServerSelectionError') {
+      return res.status(503).json({
+        success: false,
+        error: 'Database connection error',
+        message: process.env.NODE_ENV === 'development' ? error.message : 'Service temporarily unavailable',
+      })
+    }
+    
+    if (error.name === 'MongoTimeoutError') {
+      return res.status(504).json({
+        success: false,
+        error: 'Database timeout',
+        message: process.env.NODE_ENV === 'development' ? error.message : 'Request timeout',
+      })
+    }
+    
+    // Handle invalid ObjectId errors
+    if (error.message && error.message.includes('ObjectId')) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid portfolio item ID format',
+        message: process.env.NODE_ENV === 'development' ? error.message : 'Invalid ID format',
+      })
+    }
+    
     res.status(500).json({
       success: false,
       error: 'Failed to fetch portfolio item',

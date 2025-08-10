@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(pnpm:*)",
-      "Bash(npx prettier:*)"
+      "Bash(npx prettier:*)",
+      "Bash(npx:*)",
+      "Bash(npm i:*)",
+      "Bash(node:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

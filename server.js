@@ -1,8 +1,11 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import DatabaseService from './src/services/DatabaseService.js';
+import databaseConnection from './src/config/database.js';
 import portfolioRoutes from './src/routes/portfolio.js';
 import skillsRoutes from './src/routes/skills.js';
 
@@ -14,12 +17,17 @@ const PORT = process.env.PORT || 3000;
 
 // Initialize database service
 let dbService;
-try {
-  dbService = new DatabaseService();
-  console.log('Database service initialized successfully');
-} catch (error) {
-  console.error('Failed to initialize database service:', error);
-  process.exit(1);
+
+async function initializeDatabase() {
+  try {
+    dbService = await databaseConnection.connect();
+    console.log('Database connection established successfully');
+    return true;
+  } catch (error) {
+    console.error('Failed to establish database connection:', error);
+    console.error('Please ensure DATABASE_URL environment variable is set and MongoDB is accessible');
+    return false;
+  }
 }
 
 // Middleware
@@ -39,12 +47,28 @@ app.use('/api', (req, res, next) => {
 });
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    timestamp: new Date().toISOString(),
-    database: 'connected'
-  });
+app.get('/api/health', async (req, res) => {
+  try {
+    const connectionInfo = await databaseConnection.getConnectionInfo();
+    const healthStatus = await dbService.healthCheck();
+    
+    res.json({ 
+      status: healthStatus.status === 'healthy' ? 'ok' : 'degraded',
+      timestamp: new Date().toISOString(),
+      database: healthStatus,
+      connection: {
+        connected: connectionInfo.connected,
+        initialized: connectionInfo.initialized,
+        healthMonitoring: connectionInfo.healthMonitoring
+      }
+    });
+  } catch (error) {
+    res.status(503).json({
+      status: 'error',
+      timestamp: new Date().toISOString(),
+      database: { status: 'error', error: error.message }
+    });
+  }
 });
 
 // API Routes
@@ -73,25 +97,43 @@ app.use('*', (req, res) => {
 });
 
 // Graceful shutdown
-process.on('SIGINT', () => {
-  console.log('Shutting down server...');
-  if (dbService) {
-    dbService.close();
+async function gracefulShutdown(signal) {
+  console.log(`Received ${signal}. Shutting down server gracefully...`);
+  
+  try {
+    console.log('Closing database connection...');
+    await databaseConnection.disconnect();
+    console.log('Database connection closed successfully');
+  } catch (error) {
+    console.error('Error during database cleanup:', error);
   }
+  
   process.exit(0);
-});
+}
 
-process.on('SIGTERM', () => {
-  console.log('Shutting down server...');
-  if (dbService) {
-    dbService.close();
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+
+// Start server with database initialization
+async function startServer() {
+  const dbInitialized = await initializeDatabase();
+  
+  if (!dbInitialized) {
+    console.error('Failed to initialize database. Server will not start.');
+    process.exit(1);
   }
-  process.exit(0);
-});
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log('MongoDB connection established');
+  });
+}
+
+// Start the server
+startServer().catch(error => {
+  console.error('Failed to start server:', error);
+  process.exit(1);
 });
 
 export default app;
